@@ -1,7 +1,7 @@
 {
   "name": "ms1-project-master",
   "version": "1.0.0",
-  "description": "[View the live project here.](https://madyark.github.io/MS1-project/ \"MHA Organization website\")",
+  "description": "This is a wesite aimed to spread awareness among people about the mental health issues.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
