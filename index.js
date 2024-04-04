@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
  
   res.render("index");
 })
+app.get('/index', (req, res) => {
+ 
+  res.render("index");
+})
 app.get('/help-others', (req, res) => {
     
   res.render("help-others");

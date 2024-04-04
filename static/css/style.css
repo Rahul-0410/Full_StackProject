@@ -4,36 +4,6 @@
     font-family: 'Lato', sans-serif;
 }
 
-/* #covid-19-awareness {
-    position: relative;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #000000;
-} */
-
-/* #covid-19-awareness, #covid-19-awareness a, .fa-info-circle {
-    background-color: #FF6347;
-    color: white;
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: 1px;
-} */
-
-#covid-19-awareness a:hover {
-    text-decoration: none;
-}
-
-.fa-angle-right {
-    margin-left: 10px;
-    color: #FF6347;
-    font-size: inherit;
-}
-
-#covid-19-awareness .fa-angle-right {
-    color: #ffffff; /* color had to be changed due to the orange background */
-    margin-left: 5px;
-}
-
 .fa-info-circle {
     margin-right: 10px; /* to ensure space for aesthetics */
 }
@@ -71,7 +41,7 @@ a.mha-active:hover, a.mha-active:hover span { /* !important had to be used as th
 
 #mha-navbar-right-space {
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 50px;
 }
 
 .mha-link {
