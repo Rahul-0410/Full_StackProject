@@ -1,11 +1,8 @@
 const express = require('express')
 const path=require('path');
 const app = express()
-
 var bodyParser=require("body-parser");
  var LogInCollection=require('./mongoose')
-
-app.set('view engine','ejs');
 
 app.use(express.static(path.join(__dirname, 'static')));
 
@@ -14,42 +11,48 @@ app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
  
-  res.render("index");
+ 
+  res.sendFile(path.join(__dirname,'index.html'));
 })
 app.get('/index', (req, res) => {
  
-  res.render("index");
+
+  res.sendFile(path.join(__dirname,'index.html'));
 })
 app.get('/help-others', (req, res) => {
     
-  res.render("help-others");
+  res.sendFile(path.join(__dirname,'help-others.html'));
  
 })
 app.get('/educate-yourself', (req, res) => {
     
-  res.render("educate-yourself");
+  res.sendFile(path.join(__dirname,'educate-yourself.html'))
  
 })
 app.get('/help-yourself', (req, res) => {
     
-  res.render("help-yourself");
+  res.sendFile(path.join(__dirname,'help-yourself.html'));
  
 })
 app.get('/sign-in', (req, res) => {
     
-  res.render("sign-in");
+
+  res.sendFile(path.join(__dirname,'sign-in.html'))
  
 })
 app.get('/sign-up', (req, res) => {
     
-  res.render("sign-up");
+
+  res.sendFile(path.join(__dirname,'sign-up.html'))
  
 })
 app.get('/spread-the-word', (req, res) => {
     
-  res.render("spread-the-word");
+
+  res.sendFile(path.join(__dirname,'spread-the-word.html'))
  
 })
+
 
 
 app.post('/sign-up', async (req, res) => {
@@ -84,12 +87,13 @@ app.post('/sign-in', async (req, res) => {
       res.status(401).send("Invalid email or password");
       return;
     }
-    res.status(201).render("index");
+    res.status(201).sendFile(path.join(__dirname,'index.html'));
   } catch (err) {
     console.error(err);
     res.status(500).send("An error occurred");
   }
 });
+
 
 
 
