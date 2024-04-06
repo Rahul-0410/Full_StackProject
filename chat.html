@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/chat.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+            <h1>Users:</h1>
+            <ol id="head"></ol>
+        </div>
+
+        <div class="chat-container">
+            <h1>Messages:</h1>
+            <ul id="one" class="messages"></ul>
+        </div>
+
+        <form id="form" class="form-container">
+            <input type="text" id="inp">
+            <button id="btnSend">Send</button>
+        </form>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        let name=prompt("Enter your name: ");
+        const socket = io();
+        const form = document.getElementById('form');
+        const inp = document.getElementById('inp');
+        const list = document.getElementById('one');
+        const list2 = document.getElementById('head');
+
+        addEventListener('load',e=>{
+            e.preventDefault();
+            if(name){
+                socket.emit('name msg',name);
+            }
+        });
+
+        socket.on('name chat',(msg)=>{
+            const item=document.createElement('li');
+            item.textContent=msg;
+            const item2=document.createElement('li');
+            item2.textContent=msg+" joined the chat";
+            item2.style.color="green";
+            list.appendChild(item2);
+        });
+        form.addEventListener('submit',e=>{
+            e.preventDefault();
+            if(inp.value){
+                socket.emit('chat message',name,inp.value);
+                inp.value='';
+            }
+        });
+
+        socket.on('chat',(name,msg)=>{
+                const item=document.createElement('li');
+                item.innerHTML='<span class="user">'+ name + ':</span>'+ msg;
+                list.appendChild(item);
+                if(list.children.length>10){
+                    list.removeChild(list.firstChild);
+                }
+        });
+        socket.on('user disconnected', (name) => {
+            const item = document.createElement('li');
+            item.textContent = name + " is disconnected";
+            item.style.color = "red"; 
+            list.appendChild(item);
+    
+            if (list.children.length > 10) {
+                list.removeChild(list.firstChild); // 
+            }
+        });
+
+    </script>
+</body>
+</html>
