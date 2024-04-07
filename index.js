@@ -10,7 +10,7 @@ const server = http.createServer(app);
 var bodyParser=require("body-parser");
  var LogInCollection=require('./mongoose')
 
- const {intitializesSocket}=require('./chat');
+//  const {intitializesSocket}=require('./chat');
 
 app.use(express.static(path.join(__dirname, 'static')));
 

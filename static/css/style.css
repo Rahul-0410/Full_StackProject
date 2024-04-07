@@ -1803,13 +1803,18 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
 }
 
 .help-others-tips div {
-    width: 50%;
+    /* width: 50%; */
+    width: 78%;
     margin-left: auto;
     margin-right: auto;
     font-size: 40px;
     text-align: center;
     font-weight: 600;
     padding-bottom: 80px;
+}
+.help_others1{
+    display: flex;
+    align-items: flex-start;
 }
 
 .help-others-tips a, .help-others-tips a:hover {
