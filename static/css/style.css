@@ -1507,7 +1507,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         padding-bottom: 30px;
     }
     #mobile-special-padding { /* for unidentified reasons the top- and bottom-padding for the "External Links" title was off */
-        padding-top: 0px;
+        padding-top: 25px;
         padding-bottom: 0px;
         margin-top: -10px;
         margin-bottom: -30px;
@@ -1733,7 +1733,8 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
 }
 
 .help-others-row-one, .help-others-row-two, .help-others-row-three, .help-others-row-four {
-    height: 800px;
+    height: 600px;
+    /* height: 800px; */
 }
 
 .help-others-portion-left {
@@ -1761,7 +1762,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
 }
 
 .portion-img img {
-    width: 75%;
+    width: 55%;
 }
 
 .portion-heading {
@@ -1846,6 +1847,9 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
     }
     .portion-img img {
         width: 90%;
+    }
+    .portion-img1 img {
+        width: 40%;
     }
     .portion-heading {
         font-size: 18px;
