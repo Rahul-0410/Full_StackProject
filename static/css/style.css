@@ -974,6 +974,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
     padding-top: 62px;
 }
 
+
 .educate-yourself-statistics .statistics div {
     text-align: center;
     padding-bottom: 196px;
@@ -982,7 +983,20 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
 .educate-yourself-statistics .statistics div span {
     color: #FF6347;
 }
+#stories{
+    cursor: pointer;
+}
 
+#listen{
+    display: none;
+}
+#stories1{
+    cursor: pointer;
+}
+
+#listen1{
+    display: none;
+}
 .educate-yourself-call-to-action {
     background-color: #FF6347;
     width: 100%;
