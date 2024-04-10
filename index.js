@@ -55,9 +55,10 @@ app.get('/spread-the-word', (req, res) => {
 //   res.sendFile(path.join(__dirname,'chat.html'))
 //   intitializesSocket(server);
 // })
-
+let userName;
 app.post('/sign-up', async (req, res) => {
   const { fname, lname, email, pass, passconfirm } = req.body;
+  userName=fname;
   const data = {
     fname,
     lname,
@@ -74,7 +75,8 @@ app.post('/sign-up', async (req, res) => {
     }
     const newUser = new LogInCollection(data);
     await newUser.save();
-    res.redirect("/");
+    // res.redirect("/");
+    res.redirect(`/?success=true`);
   } catch (err) {
     console.error(err);
     res.status(500).send("An error occurred");
@@ -88,7 +90,8 @@ app.post('/sign-in', async (req, res) => {
       res.status(401).send("Invalid email or password");
       return;
     }
-    res.status(201).sendFile(path.join(__dirname,'index.html'));
+    // res.status(201).sendFile(path.join(__dirname,'index.html'));
+    res.redirect(`/?login=true`);
   } catch (err) {
     console.error(err);
     res.status(500).send("An error occurred");
