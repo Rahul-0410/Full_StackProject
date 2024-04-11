@@ -5,17 +5,25 @@ const path=require('path');
 const http=require('http')
 
 const app = express()
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
 var bodyParser=require("body-parser");
  var LogInCollection=require('./mongoose')
 
-//  const {intitializesSocket}=require('./chat');
+ const soc = require('socket.io');
+//  const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'static')));
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+const port = process.env.PORT || 3000;
+
+const server=app.listen(port, () => {
+  console.log(`Example app listening on port 3000`)
+})
+
 
 app.get('/', (req, res) => {
 
@@ -51,10 +59,37 @@ app.get('/spread-the-word', (req, res) => {
   res.sendFile(path.join(__dirname,'spread-the-word.html'))
 })
 
-// app.get('/chat', (req, res) => {
-//   res.sendFile(path.join(__dirname,'chat.html'))
-//   intitializesSocket(server);
-// })
+app.get('/chat', (req, res) => {
+  res.sendFile(path.join(__dirname,'chat.html'))
+})
+// chat js code 
+const io = soc(server);
+io.on('connection', (socket) => {
+  // senderName is declared here, within the scope of the connection handler function
+  console.log("A user connected");
+  var senderName; // Using a normal var declaration
+
+  socket.on('name msg', (msg) => {
+      io.emit('name chat', msg);
+  });
+
+  socket.on('chat message', (name, msg) => {
+      // Within this function scope, senderName refers to the variable declared above
+      senderName = name; // Store sender's name in the var
+      io.emit('chat', name, msg);
+  });
+
+  // Handle disconnect event
+  socket.on('disconnect', () => {
+      console.log("A user disconnected");
+      // Emit the disconnect event with the stored name
+      io.emit('user disconnected', senderName);
+  });
+});
+//  end here 
+
+
+
 let userName;
 app.post('/sign-up', async (req, res) => {
   const { fname, lname, email, pass, passconfirm } = req.body;
@@ -99,11 +134,7 @@ app.post('/sign-in', async (req, res) => {
 });
 
 // const hostname='0.0.0.0'
-const port = process.env.PORT || 3000;
 
-app.listen(port, () => {
-  console.log(`Example app listening on port 3000`)
-})
 // app.listen(process.env.PORT || 3000,hostname, () => {
 //   console.log(`Example app listening on port 3000`)
 // })

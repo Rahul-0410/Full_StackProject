@@ -1,30 +1,66 @@
-const socket = require('socket.io')
+// const socket = require('socket.io')
 
-let io;
+// let io;
 
-function intitializesSocket(server) {
-    io = socket(server)
-    io.on('connection', (socket) => {
-        console.log("A user connected");
-        var senderName;
+// function intitializesSocket(server) {
+//     io = socket(server)
+//     io.on('connection', (socket) => {
+//         console.log("A user connected");
+//         var senderName;
 
-        socket.on('name msg', (msg) => {
-            io.emit('chat msg', msg);
-        });
+//         socket.on('name msg', (msg) => {
+//             io.emit('chat msg', msg);
+//         });
 
-        socket.on('chat message',(name,msg)=>{
-            senderName=name;
-            io.emit('chat',name, msg);
-        });
-        socket.on('disconnect',()=>{
-            console.log("A user disconnected");
-            io.emit('user disconnected',senderName);
-        });
+//         socket.on('chat message',(name,msg)=>{
+//             senderName=name;
+//             io.emit('chat',name, msg);
+//         });
+//         socket.on('disconnect',()=>{
+//             console.log("A user disconnected");
+//             io.emit('user disconnected',senderName);
+//         });
 
-    });
-}
+//     });
+// }
 
-module.exports={
-    intitializesSocket,
-    io,
-};
+// module.exports={
+//     intitializesSocket,
+//     io,
+// };
+
+
+// const exp = require('express');
+// const soc = require('socket.io');
+// const path = require('path');
+// const app = exp();
+// const hostname='0.0.0.0'
+// const server = app.listen(process.env.PORT || 3000,hostname, () => {
+//     console.log("listening");
+// });
+// const io = soc(server);
+
+// app.use(exp.static(path.join(__dirname)));
+
+// io.on('connection', (socket) => {
+//     // senderName is declared here, within the scope of the connection handler function
+//     console.log("A user connected");
+//     var senderName; // Using a normal var declaration
+
+//     socket.on('name msg', (msg) => {
+//         io.emit('name chat', msg);
+//     });
+
+//     socket.on('chat message', (name, msg) => {
+//         // Within this function scope, senderName refers to the variable declared above
+//         senderName = name; // Store sender's name in the var
+//         io.emit('chat', name, msg);
+//     });
+
+//     // Handle disconnect event
+//     socket.on('disconnect', () => {
+//         console.log("A user disconnected");
+//         // Emit the disconnect event with the stored name
+//         io.emit('user disconnected', senderName);
+//     });
+// });
