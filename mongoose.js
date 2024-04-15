@@ -1,5 +1,7 @@
 const mongoose=require('mongoose');
-mongoose.connect("mongodb://127.0.0.1:27017/MHAuser")
+mongoose.connect("mongodb+srv://rgs786999:8wm6lhVoV59yirSJ@cluster0.9olfp7w.mongodb.net/",{
+    dbName: "MHO",
+})
 .then(()=>{
     console.log("connection successful");
 })
