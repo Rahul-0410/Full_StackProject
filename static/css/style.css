@@ -4,9 +4,6 @@
     font-family: 'Lato', sans-serif;
 }
 
-.fa-info-circle {
-    margin-right: 10px; /* to ensure space for aesthetics */
-}
 
 #custom-nav-css {
     border-bottom: 1px solid #000000;
@@ -62,7 +59,7 @@ a.mha-active:hover, a.mha-active:hover span { /* !important had to be used as th
     border: 1px solid #000000;
     border-radius: 8px;
     width: 100%;
-    padding: 13px 0px; /* chosen by guess-work, not purely consistent with other numbers */
+    padding: 13px 0px; 
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 40px;
@@ -87,7 +84,7 @@ a.mha-active:hover, a.mha-active:hover span { /* !important had to be used as th
 
 .start-spreading-awareness {
     color: #FF6347;
-    font-size: 24px; /* bigger size than the call out to grasp the viewer's attention */
+    font-size: 24px; 
     font-weight: 500;
 }
 
@@ -169,12 +166,12 @@ footer div {
 }
 
 .top-right {
-    margin-top: -30px; /* adjusts the social media icons to be of correct y-position */
+    margin-top: -30px; 
     background-color: #000000;
 }
 
 .top-right i {
-    margin-right: 10px; /* done for aesthetic purposes */
+    margin-right: 10px; 
     margin-left: 10px;
     background-color: #000000;
     font-size: 20px;
@@ -205,9 +202,9 @@ footer div {
 /* Extra small devices (phones) */
 @media only screen and (max-width:717px) {
     #custom-navbar-brand-mobile-responsiveness { 
-        font-size: 16px; /* smaller font for the navbar-brand text on small devices */
+        font-size: 16px; 
     }
-    #custom-navbar-brand-mobile-responsiveness img { /* a little of a smaller logo on small devices */
+    #custom-navbar-brand-mobile-responsiveness img { 
         height: 28px;
         width: 28px;
     }
@@ -215,7 +212,7 @@ footer div {
         font-size: 16px;
     }
     .fa-angle-right {
-        margin-left: 5px; /* smaller margin to stay consistent with the size of the device */
+        margin-left: 5px; 
     }
     .black-background {
         height: 50px;
@@ -247,16 +244,16 @@ footer div {
 /* Small devices (Tablets and landscape phones) */
 @media only screen and (min-width:718px) and (max-width:992px) {
     .fa-angle-right {
-        margin-left: 8px; /* smaller margin to stay consistent with the size of the device */
+        margin-left: 8px; 
     }
     #covid-19-awareness .fa-angle-right {
         margin-left: 5px;
     }
     .black-background {
-        height: 50px; /* smaller height as the device is smaller */
+        height: 50px; 
     }
     .bottom-footer {
-        padding-top: 20px; /* more seperation for aesthetic purposes */
+        padding-top: 20px;
     }
     .top-left, .bottom-left, .bottom-right span {
         font-size: 12px;
@@ -269,7 +266,7 @@ footer div {
 /* Large devices (Large desktops and laptops) */
 @media only screen and (min-width: 1824px) {
     .top-footer, .bottom-footer {
-        width: 75%; /* ensures that the footer elements are not too far apart */
+        width: 75%; 
     }
 }
 
@@ -280,7 +277,7 @@ footer div {
     margin-bottom: 28px;
     text-align: center;
     font-weight: 600;
-    text-decoration: none; /* needed to remove text decoration since they are links */
+    text-decoration: none; 
 }
 
 .hero-text div {
@@ -377,7 +374,7 @@ footer div {
     position: relative;
 }
 
-.depression-image, .ptsd-image { /* different than the anxiety section for aesthetic purposes */
+.depression-image, .ptsd-image { 
     float: left;
 }
 
@@ -590,7 +587,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
     font-weight: 400;
     text-align: center;
     padding: 20px;
-    height: 150px; /* height had to be fixed so that the two side-by-side div elements appear to have equal height */
+    height: 150px; 
     overflow: hidden;
 } 
 
@@ -898,7 +895,6 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
 
 /* Medium devices (Large tablets and small laptops) */
 @media only screen and (min-width:993px) and (max-width:1310px) { 
-    /* only use of this @media screen size to make the mental-health-more-information-home section of the home page look better aesthetically */
     .depression-home, .anxiety-home, .ptsd-home {
         width: 90%;
     }
@@ -910,9 +906,9 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         width: 10%;
     }
     .hero-image img {
-        width: 50%; /* image appears to large for large desktops */
+        width: 50%; 
     }
-    .content h1 { /* content is too wide and needs to be narrower */
+    .content h1 { 
         padding-left: 250px;
         padding-right: 250px;
     } 
@@ -930,10 +926,10 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         padding-bottom: 50px;
     }
     .hero-image-home-2 img {
-        display: none; /* image appears to large for large desktops therefore it will be removed, set as a background, and cropped out */
+        display: none; 
     }
-    /* idea taken from https://css-tricks.com/crop-top/ */
-    .hero-image-home-2 { /* cropping the removed image and adding it back as a background for the div element */
+    
+    .hero-image-home-2 { 
         width: 100%;
         height: 1000px;
         background-image: url(../../assets/images/community.jpg);
@@ -1033,7 +1029,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
     color: #ffffff;
 }
 
-.textual-info a p { /* had to use margins so the link hover wouldn't be as wide as it is with paddings */
+.textual-info a p { 
     margin-top: 62px;
     margin-bottom: 62px;
     text-decoration: none;
@@ -1054,7 +1050,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
 }
 
 .educate-yourself-call-to-action .mha-get-started a:hover {
-    color: #000000; /* set the color of the icon to white to match with the text */
+    color: #000000; 
 }
 
 .educate-yourself-call-to-action .get-started-button {
@@ -1081,7 +1077,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
 }
 
 .angle-color-black .fa-angle-right {
-    color: #000000; /* set the color of the icon to black to match with the text */
+    color: #000000;
 }
 
 /* Extra small devices (phones) */
@@ -1091,7 +1087,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         padding-top: 62px;
     }
     .educate-yourself-statistics .statistics div {
-        padding-bottom: 96px; /* 32px times 3 = 96px */
+        padding-bottom: 96px;
     }
     .educate-yourself-call-to-action {
         margin-top: 0px;
@@ -1101,7 +1097,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         width: 70%;
     }
     .textual-info h1 {
-        padding-top: 34px; /* 34px + 62px = 96px which is equal to the padding-bottom of .educate-yourself-statistics .statistics div */
+        padding-top: 34px; 
         font-size: 32px;
     }
     .textual-info p {
@@ -1112,7 +1108,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         margin-bottom: 32px;
     }
     .textual-info .fa-angle-right {
-        margin-left: 5px; /* make sure the icon does not jump over to the next line */
+        margin-left: 5px;
     }
     .educate-yourself-call-to-action .mha-get-started {
         padding-bottom: 62px;
@@ -1136,7 +1132,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         padding-top: 45px;
     }
     .educate-yourself-statistics .statistics div {
-        padding-bottom: 135px;  /* 45px times 3 = 135px */
+        padding-bottom: 135px;  
     }
     .educate-yourself-call-to-action {
         margin-top: 0px;
@@ -1146,7 +1142,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         width: 60%; 
     }
     .textual-info h1 {
-        padding-top: 70px; /* 70px + 65px = 135px which is the padding bottom of .educate-yourself-statistics .statistics div */
+        padding-top: 70px; 
         font-size: 45px;
     }
     .textual-info p {
@@ -1416,7 +1412,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
 }
 
 .help-yourself-resources-links .fa-angle-right {
-    color: #49A4D5; /* the color of the icon should match the color of the text */
+    color: #49A4D5; 
 }
 
 /* Extra small devices (phones) */
@@ -1515,12 +1511,12 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         display: none;
     }
     .help-yourself-resources-articles iframe {
-        display: none; /* the article does not look good on mobile so the options of its ommitance was selected  */
+        display: none; 
     }
     .help-yourself-resources-links {
         padding-bottom: 30px;
     }
-    #mobile-special-padding { /* for unidentified reasons the top- and bottom-padding for the "External Links" title was off */
+    #mobile-special-padding { 
         padding-top: 25px;
         padding-bottom: 0px;
         margin-top: -10px;
@@ -1632,7 +1628,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         display: none;
     }
     .help-yourself-resources-articles iframe {
-        display: none; /* the tablet width and height do not allow for good article functionality */
+        display: none; 
     }
     .help-yourself-resources-links {
         padding-top: 0px;
@@ -1644,7 +1640,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
     }
 }
 
-/* Medium devices (Large tablets and small laptops) */
+
 @media only screen and (min-width:993px) and (max-width:1310px) {
     #help-yourself-title div {
         padding-bottom: 62px;
@@ -1678,7 +1674,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         display: none;
     }
     .help-yourself-resources-articles iframe {
-        display: none; /* the width and height do not allow for good article functionality */
+        display: none; 
     }
 }
 
@@ -1769,7 +1765,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
 
 .portion-img {
     overflow: hidden;
-    display: flex; /* display:flex and align-items:center used to vertically align images into the center of the container */
+    display: flex; 
     align-items: center;
     justify-content: center;
     height: 300px;
@@ -1796,8 +1792,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
     margin-left: auto;
     margin-right: auto;
     height: 250px;
-    overflow: hidden; /* change the height settings for .portion-body, .portion-heading and 
-    .help-others-portion-left & -right in other screen sizes*/
+    overflow: hidden; 
 }
 
 .help-others-big-image {
@@ -1908,7 +1903,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         margin-bottom: 18px;
     }
     .portion-img {
-        height: 225px; /* 45px times 5 = 225px */
+        height: 225px; 
     }
     .portion-heading {
         font-size: 26px;
@@ -1933,7 +1928,6 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
     }
 }
 
-/* Large devices (Large desktops and laptops) */
 @media only screen and (min-width: 1824px) {
     .help-others-title div {
         width: 60%;
@@ -2435,7 +2429,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
 }
 
 .sign-in-redirect .fa-angle-right, .sign-up-redirect .fa-angle-right {
-    margin-left: 5px; /* smaller margins to accomodate the smaller font */
+    margin-left: 5px;
 }
 
 /* Extra small devices (phones) */
@@ -2465,7 +2459,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
 
 /* Small devices (Tablets and landscape phones) */
 @media only screen and (min-width:718px) and (max-width:992px) {
-    .sign-in-page { /* bigger margins are used for aesthetic purposes */
+    .sign-in-page {
         margin-top: 135px;
         margin-bottom: 135px;
     }
@@ -2489,7 +2483,7 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         font-size: 16px;
     }
     .sign-in-redirect .fa-angle-right, .sign-up-redirect .fa-angle-right {
-        margin-left: 5px; /* smaller margins to accomodate the smaller font and smaller device screen size */
+        margin-left: 5px;
     }
 }
 
@@ -2502,7 +2496,6 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
     }
 }
 
-/* @media queries with min-height settings to ensure the footer stays at the bottom of the sign-in and sign-up pages */
 @media only screen and (min-height:940px) {
     .sign-in-page {
         margin-top: 150px;
@@ -2601,10 +2594,6 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
         margin-bottom: 1200px;
     }
 }
-
-/* for the alert box in index page when signup complted */
-
-/* Alert box container */
 .alert-container {
     position: fixed;
     top: 0;
@@ -2623,7 +2612,6 @@ textarea:focus, input:focus{  /* removes the blue border that appears when the e
     border: 2px solid white;
    
   }
-  
   /* Alert box */
   .alert-box {
     background-color: white;
