@@ -218,7 +218,8 @@
     <div class="alert-container" id="alertContainer">
         <div class="alert-box">
           <h2>Registration Successful!</h2>
-          <p>You have been successfully registered.</p>
+          <p id="p1"></p>
+          <!-- <p id="p1">You have been successfully registered.</p> -->
           <button onclick="closeAlert()">OK</button>
         </div>
       </div>
@@ -226,7 +227,8 @@
       <div class="alert-container" id="loginAlertContainer">
         <div class="alert-box">
           <h2>Sign In Successful!</h2>
-          <p>You have been successfully logged in.</p>
+          <p id="p2"></p>
+          <!-- <p id="p2">You have been successfully logged in.</p> -->
           <button onclick="closeLoginAlert()">OK</button>
         </div>
       </div>
@@ -238,6 +240,8 @@
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('success')) {
       // Show the registration success alert box
+      const name=document.getElementById('p1');
+      name.textContent=`${decodeURIComponent(urlParams.get('username'))}, you have successfully  registered`
       document.getElementById('alertContainer').style.opacity = '1';
       document.getElementById('alertContainer').style.visibility = 'visible';
 
@@ -245,7 +249,10 @@
       window.history.replaceState({}, document.title, window.location.pathname);
     } else if (urlParams.get('login')) {
       // Show the login success alert box
+      const name=document.getElementById('p2');
+      name.textContent=`${decodeURIComponent(urlParams.get('username'))}, you have successfully  Logged In.`
       document.getElementById('loginAlertContainer').style.opacity = '1';
+      
       document.getElementById('loginAlertContainer').style.visibility = 'visible';
 
       // Remove the 'login' query parameter from the URL

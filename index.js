@@ -29,10 +29,7 @@ app.get('/', (req, res) => {
 
   res.sendFile(path.join(__dirname,'index.html'));
 })
-// app.get('/index', (req, res) => {
- 
-//   res.sendFile(path.join(__dirname,'index.html'));
-// })
+
 app.get('/help-others', (req, res) => {
     
   res.sendFile(path.join(__dirname,'help-others.html'));
@@ -90,6 +87,7 @@ io.on('connection', (socket) => {
 
 app.post('/sign-up', async (req, res) => {
   const { fname, lname, email, pass, passconfirm } = req.body;
+
   const data = {
     fname,
     lname,
@@ -107,7 +105,10 @@ app.post('/sign-up', async (req, res) => {
     const newUser = new LogInCollection(data);
     await newUser.save();
     // res.redirect("/");
-    res.redirect(`/?success=true`);
+    const user = await LogInCollection.findOne({ fname: newUser.fname });
+    const username=user.fname;
+    res.redirect(`/?success=true&username=${encodeURIComponent(username)}`);
+    // res.redirect(`/?success=true`);
   } catch (err) {
     console.error(err);
     res.status(500).send("An error occurred");
@@ -121,8 +122,11 @@ app.post('/sign-in', async (req, res) => {
       res.status(401).send("Invalid email or password");
       return;
     }
-    // res.status(201).sendFile(path.join(__dirname,'index.html'));
-    res.redirect(`/?login=true`);
+  
+    const user = await LogInCollection.findOne({ fname: check.fname });
+    const username=user.fname;
+    // res.redirect(`/?login=true`);
+    res.redirect(`/?login=true&username=${encodeURIComponent(username)}`);
   } catch (err) {
     console.error(err);
     res.status(500).send("An error occurred");

@@ -1,6 +1,8 @@
 const mongoose=require('mongoose');
 mongoose.connect("mongodb+srv://rgs786999:8wm6lhVoV59yirSJ@cluster0.9olfp7w.mongodb.net/",{
     dbName: "MHO",
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 })
 .then(()=>{
     console.log("connection successful");
