@@ -5,13 +5,13 @@ const path=require('path');
 const http=require('http')
 
 const app = express()
-// const server = http.createServer(app);
+
 
 var bodyParser=require("body-parser");
  var LogInCollection=require('./mongoose')
 
  const soc = require('socket.io');
-//  const path = require('path');
+
 
 app.use(express.static(path.join(__dirname, 'static')));
 
@@ -29,10 +29,10 @@ app.get('/', (req, res) => {
 
   res.sendFile(path.join(__dirname,'index.html'));
 })
-app.get('/index', (req, res) => {
+// app.get('/index', (req, res) => {
  
-  res.sendFile(path.join(__dirname,'index.html'));
-})
+//   res.sendFile(path.join(__dirname,'index.html'));
+// })
 app.get('/help-others', (req, res) => {
     
   res.sendFile(path.join(__dirname,'help-others.html'));
@@ -86,14 +86,10 @@ io.on('connection', (socket) => {
       io.emit('user disconnected', senderName);
   });
 });
-//  end here 
 
 
-
-let userName;
 app.post('/sign-up', async (req, res) => {
   const { fname, lname, email, pass, passconfirm } = req.body;
-  userName=fname;
   const data = {
     fname,
     lname,

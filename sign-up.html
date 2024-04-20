@@ -24,7 +24,7 @@
     
         <nav class="navbar navbar-expand-lg my-0 navbar-light" id="custom-nav-css"> <!-- navbar uses bootstrap code seen as seen in https://getbootstrap.com/docs/4.0/components/navbar/ -->
         <div class="container-fluid"> 
-            <a class="navbar-brand" id="custom-navbar-brand-mobile-responsiveness" href="index">
+            <a class="navbar-brand" id="custom-navbar-brand-mobile-responsiveness" href="/">
                 <img src="/images/hugging.png" class="d-inline-block align-top" alt="Mental Health Awareness Organization logo" loading="lazy">
                 Mental Health Awareness Organization
             </a>
@@ -59,9 +59,9 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required placeholder="Email Address" aria-label="Email input">
                 <label for="pass">Password</label>
-                <input type="password" id="pass" name="pass" required placeholder="Password" aria-label="Password input">
+                <input type="password" id="pass" name="pass" required placeholder="Password" aria-label="Password input" minlength="6">
                 <label for="passconfirm">Confirm password</label>
-                <input type="password" id="passconfirm" name="passconfirm" required placeholder="Confirm Password" aria-label="Confirm password input">
+                <input type="password" id="passconfirm" name="passconfirm" required placeholder="Confirm Password" aria-label="Confirm password input" minlength="6">
                 <input type="submit" value="Sign Up" aria-label="Sign Up button">
             </form>
         </div>
