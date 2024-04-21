@@ -124,22 +124,20 @@
         </div>
     </section>
 
-    <!-- <section class="mental-health-awareness-newsletter-home">
+    <section class="mental-health-awareness-newsletter-home">
         <div class="newsletter">
             <div class="newsletter-callout">
-                <h1>Receive mental health guidance from professionals.</h1>
-                <p>Join our email list to receive monthly news about events from our community, 
-                support articles, written testimonials, tips from industry professionals, and more.</p>
+                <h1>Join the community of MHAO & read and write blogs</h1>
+                <p>Join to read blogs about your problems and find solutions and also have place to post your own solutions.</p>
             </div>
             <div class="newsletter-form">
-                <form action="sign-in" target="_blank" method="post" autocomplete="on">
-                    <label for="email">Enter your email here</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email address." aria-label="An input field where you can enter your email">
-                    <input type="submit" value="Sign up now" aria-label="Register button">
-                </form>
+                <div class="mha-get-started">
+                    <a href="/blog" aria-label="Link to the 'Sign Up' page"><div class="get-started-button">Blog</div></a>
+                </div>
+              
             </div>
         </div>
-    </section> -->
+    </section>
     <section class="mental-health-awareness-newsletter-home">
         <div class="newsletter">
             <div class="newsletter-callout">
@@ -257,7 +255,7 @@
 
       // Remove the 'login' query parameter from the URL
       window.history.replaceState({}, document.title, window.location.pathname);
-    }
+    } 
 
     function closeAlert() {
       // Hide the registration success alert box
@@ -270,6 +268,7 @@
       document.getElementById('loginAlertContainer').style.opacity = '0';
       document.getElementById('loginAlertContainer').style.visibility = 'hidden';
     }
+   
     </script>
 </body>
 </html>

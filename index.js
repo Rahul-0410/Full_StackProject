@@ -115,6 +115,7 @@ app.post('/sign-up', async (req, res) => {
   }
 });
 
+var log=false;
 app.post('/sign-in', async (req, res) => {
   try {
     const check = await LogInCollection.findOne({ email: req.body.email });
@@ -126,12 +127,21 @@ app.post('/sign-in', async (req, res) => {
     const user = await LogInCollection.findOne({ fname: check.fname });
     const username=user.fname;
     // res.redirect(`/?login=true`);
+    log=true;
     res.redirect(`/?login=true&username=${encodeURIComponent(username)}`);
   } catch (err) {
     console.error(err);
     res.status(500).send("An error occurred");
   }
 });
+
+app.get('/blog',(req,res)=>{
+  if(log==true){
+    res.redirect('https://blogweb-8lyb.onrender.com/')
+  } else{
+    res.redirect(`/sign-in`);
+  }
+})
 
 // const hostname='0.0.0.0'
 
