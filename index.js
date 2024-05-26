@@ -137,7 +137,8 @@ app.post('/sign-in', async (req, res) => {
 
 app.get('/blog',(req,res)=>{
   if(log==true){
-    res.redirect('https://blogweb-8lyb.onrender.com/')
+    res.redirect('http://127.0.0.1:300/')
+    // res.redirect('https://blogweb-8lyb.onrender.com/')
   } else{
     res.redirect(`/sign-in`);
   }
