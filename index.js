@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
 const server=app.listen(port, () => {
   console.log(`Example app listening on port 3000`)
